@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<style>
+    body {
+        background-color: gray;
+        font-family: Arial, sans-serif;
+        position: relative;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+    }
+
+    .falling-item {
+        position: fixed;
+        font-size: 24px;
+        user-select: none;
+        pointer-events: none;
+        z-index: 9999;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        from {
+            transform: translateY(-100px) rotate(0deg);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(calc(100vh + 100px)) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    input[type="button"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="button"]:hover {
+        background-color: #45a049;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+    }
+
+    p {
+        color: #333;
+        font-size: 14px;
+        margin-top: 20px;
+        font-style: italic;
+    }
+</style>
+
+<body>
+    <center>
+        <form name="form">
+            <table>
+                <tr>
+                    <td>NAMA</td>
+                    <td>: <input type="text" name="anya" placeholder="Panggilan" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center; padding-top: 15px;">
+                        <input type="button" value="Submit" onclick="iloveugiya()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <p>nama yang sering aku panggil ke kamu</p>
+    </center>
+
+    <script>
+        function sayangkamu(type) {
+            const emojis = type === 'love' 
+                ? ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'] 
+                : ['😡', '😡', '😡', '😡', '😡', '😡', '😡', '😡', '😡', '😡', '😡'];
+            
+            const count = type === 'love' ? 300 : 20;
+            
+            for(let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const fallingItem = document.createElement('div');
+                    fallingItem.className = 'falling-item';
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    fallingItem.innerHTML = randomEmoji;
+                    fallingItem.style.left = Math.random() * 95 + '%';
+                    const size = type === 'love' 
+                        ? Math.random() * 30 + 20 
+                        : Math.random() * 25 + 25; 
+                    fallingItem.style.fontSize = size + 'px';
+                    const duration = type === 'love' 
+                        ? Math.random() * 5 + 3 
+                        : Math.random() * 2 + 2; 
+                    fallingItem.style.animationDuration = duration + 's';
+                    fallingItem.style.animationDelay = Math.random() * 0.5 + 's';
+                    document.body.appendChild(fallingItem);
+                    
+                    setTimeout(() => {
+                        fallingItem.remove();
+                    }, (duration + 1) * 1000);
+                    
+                }, i * 50);
+            }
+        }
+
+        function iloveugiya() {
+            anya = document.form.anya.value;
+            
+            if (anya.toLowerCase() == "giya") {
+                sayangkamu('love');
+                
+                Swal.fire({
+                    title: 'halo sayang cintakuuuu',
+                    background: '#fff',
+                    confirmButtonColor: '#ff69b4',
+                    confirmButtonText: 'next',
+                    showClass: {
+                        popup: 'animate__animated animate__bounceInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__bounceOutUp'
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'anya.html';
+                    }
+                });
+            } else {
+                sayangkamu('angry');
+                
+                Swal.fire({
+                    title: 'SALAHHHH!!',
+                    text: 'yang sering aku panggil',
+                    icon: 'error',
+                    confirmButtonColor: '#ff4444',
+                    confirmButtonText: 'ulang ulang',
+                    showClass: {
+                        popup: 'animate__animated animate__shakeX'
+                    },
+                });
+            }
+        }
+        
+        document.querySelector('input[type="button"]').addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = '0.3s';
+        });
+
+        document.querySelector('input[type="button"]').addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        document.querySelector('input[type="text"]').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                iloveugiya();
+            }
+        });
+    </script>
+</body>
+</html>

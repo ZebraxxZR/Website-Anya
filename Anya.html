@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Anya Tersayang ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hidden audio - no UI */
+        #bgMusic {
+            display: none;
+        }
+
+        /* Falling items with more variations - ALWAYS ACTIVE */
+        .falling-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999; /* Always on top */
+        }
+
+        .falling-item {
+            position: absolute;
+            font-size: 24px;
+            user-select: none;
+            animation: fall linear forwards;
+            top: -50px;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.8));
+            will-change: transform;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(25vh) rotate(180deg) scale(1.2);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateY(50vh) rotate(360deg) scale(1);
+                opacity: 0.7;
+            }
+            75% {
+                transform: translateY(75vh) rotate(540deg) scale(0.8);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Main card with romantic glow */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: cardAppear 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), glowPulse 3s infinite;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes cardAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3); }
+            50% { box-shadow: 0 30px 80px rgba(255, 20, 147, 0.6); }
+        }
+
+        .dialog h1 {
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #ffb6c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+            animation: textShine 3s infinite;
+            background-size: 200% auto;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .dialog p {
+            color: #590d22;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active:before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-ya {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            animation: buttonPulse 2s infinite;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(255, 20, 147, 0.7); }
+        }
+
+        .btn-ya:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+        }
+
+        .btn-tidak {
+            background: linear-gradient(45deg, #a9a9a9, #808080);
+            color: white;
+            box-shadow: 0 4px 15px rgba(128, 128, 128, 0.4);
+        }
+
+        .btn-tidak:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(128, 128, 128, 0.5);
+        }
+
+        /* Animasi pulse untuk tombol Ya */
+        @keyframes yesPulse {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.2); }
+            40% { transform: scale(1.4); }
+            50% { transform: scale(1.2); }
+            60% { transform: scale(1.1); }
+            70% { transform: scale(1.2); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Ambient Background Animations */
+        .bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 10%;
+            animation-duration: 25s;
+        }
+
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            right: 10%;
+            animation-duration: 30s;
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 50%;
+            animation-duration: 35s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(20px, 40px) rotate(180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* Envelope Stage */
+        #envelope-stage {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+
+        #envelope-stage.visible {
+            display: flex;
+            opacity: 1;
+        }
+
+        .envelope-container {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+            animation: envelopeFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes envelopeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .envelope-container:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #ff4d6d;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 110px solid #ff758f;
+            transform-origin: top;
+            transition: transform 0.6s ease 0.5s, z-index 0.2s;
+            z-index: 5;
+        }
+
+        .pocket {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 200px solid #ff4d6d;
+            z-index: 3;
+        }
+
+        .letter-preview {
+            width: 260px;
+            height: 180px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            border-radius: 5px;
+            z-index: 2;
+            transition: transform 0.8s ease 1s;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        }
+
+        .seal {
+            width: 40px;
+            height: 40px;
+            background: #d00000;
+            border-radius: 50%;
+            position: absolute;
+            top: 80px;
+            left: 130px;
+            z-index: 6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffcccb;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.5s ease;
+            cursor: pointer;
+            animation: sealBeat 1.5s infinite;
+        }
+
+        @keyframes sealBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Open state for envelope */
+        .envelope-container.open .flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope-container.open .seal {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .envelope-container.open .letter-preview {
+            transform: translateY(-100px);
+            z-index: 4;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Full Letter View */
+        #letter-view {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #letter-view.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .love-letter {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            padding: 3rem;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            background-image: repeating-linear-gradient(white 0px, white 24px, #ffe4e1 25px);
+            line-height: 25px;
+            transform: scale(0.8);
+            transition: transform 0.5s ease;
+            animation: letterGlow 3s infinite;
+        }
+
+        @keyframes letterGlow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 77, 109, 0.3); }
+            50% { box-shadow: 0 20px 50px rgba(255, 20, 147, 0.6); }
+        }
+
+        #letter-view.active .love-letter {
+            transform: scale(1);
+        }
+
+        .love-letter h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff4d6d;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: textHeartbeat 2s infinite;
+        }
+
+        @keyframes textHeartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.05); color: #ff1493; }
+            50% { transform: scale(1); }
+        }
+
+        .love-letter p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInLetter 0.5s ease forwards;
+        }
+
+        .love-letter p:nth-child(2) { animation-delay: 0.2s; }
+        .love-letter p:nth-child(3) { animation-delay: 0.4s; }
+        .love-letter p:nth-child(4) { animation-delay: 0.6s; }
+        .love-letter p:nth-child(5) { animation-delay: 0.8s; }
+        .love-letter p:nth-child(6) { animation-delay: 1s; }
+        .love-letter p:nth-child(7) { animation-delay: 1.2s; }
+
+        @keyframes fadeInLetter {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+            background: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #ff4d6d;
+            transform: rotate(90deg);
+        }
+
+        /* Garden Container - Pink background with sun and grass */
+        .garden-container {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, #ffb6c1 0%, #ffc0cb 70%, #90be6d 100%);
+            z-index: 300;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .garden-container.active {
+            display: flex;
+        }
+
+        /* Sun with romantic glow */
+        .sun {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 50px #ffd700;
+            animation: sunGlow 3s infinite alternate, sunRotate 20s linear infinite;
+        }
+
+        @keyframes sunGlow {
+            from { box-shadow: 0 0 50px #ffd700; }
+            to { box-shadow: 0 0 100px #ffd700, 0 0 150px #ffa500; }
+        }
+
+        @keyframes sunRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Sun rays */
+        .sun-rays {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            z-index: 0;
+        }
+
+        .sun-rays::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Grass with wave animation */
+        .grass {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(180deg, #90be6d, #4c9a2a);
+            z-index: 5;
+            clip-path: polygon(0% 30%, 5% 20%, 10% 30%, 15% 15%, 20% 25%, 25% 10%, 30% 20%, 35% 5%, 40% 15%, 45% 8%, 50% 18%, 55% 5%, 60% 15%, 65% 10%, 70% 20%, 75% 8%, 80% 18%, 85% 12%, 90% 22%, 95% 10%, 100% 20%, 100% 100%, 0% 100%);
+            animation: grassWave 5s ease-in-out infinite;
+        }
+
+        @keyframes grassWave {
+            0%, 100% { clip-path: polygon(0% 30%, 5% 20%, 10% 30%, 15% 15%, 20% 25%, 25% 10%, 30% 20%, 35% 5%, 40% 15%, 45% 8%, 50% 18%, 55% 5%, 60% 15%, 65% 10%, 70% 20%, 75% 8%, 80% 18%, 85% 12%, 90% 22%, 95% 10%, 100% 20%, 100% 100%, 0% 100%); }
+            50% { clip-path: polygon(0% 35%, 5% 25%, 10% 35%, 15% 20%, 20% 30%, 25% 15%, 30% 25%, 35% 10%, 40% 20%, 45% 13%, 50% 23%, 55% 10%, 60% 20%, 65% 15%, 70% 25%, 75% 13%, 80% 23%, 85% 17%, 90% 27%, 95% 15%, 100% 25%, 100% 100%, 0% 100%); }
+        }
+
+        /* Grass blades */
+        .grass-blade {
+            position: absolute;
+            bottom: 0;
+            width: 4px;
+            height: 60px;
+            background: linear-gradient(180deg, #90be6d, #4c9a2a);
+            transform-origin: bottom;
+            animation: sway 3s infinite alternate;
+        }
+
+        @keyframes sway {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
+        }
+
+        /* Lilies with romantic animation */
+        .lily {
+            position: absolute;
+            bottom: 100px;
+            z-index: 10;
+            filter: drop-shadow(0 5px 15px rgba(255, 105, 180, 0.3));
+        }
+
+        .lily-1 { left: 20%; animation: lilySway 4s infinite alternate; }
+        .lily-2 { left: 40%; animation: lilySway 4.5s infinite alternate-reverse; }
+        .lily-3 { left: 60%; animation: lilySway 5s infinite alternate; }
+        .lily-4 { left: 80%; animation: lilySway 4.2s infinite alternate-reverse; }
+        .lily-5 { left: 10%; animation: lilySway 4.8s infinite alternate; }
+        .lily-6 { left: 30%; animation: lilySway 4.3s infinite alternate-reverse; }
+        .lily-7 { left: 50%; animation: lilySway 5.2s infinite alternate; }
+        .lily-8 { left: 70%; animation: lilySway 4.6s infinite alternate-reverse; }
+        .lily-9 { left: 90%; animation: lilySway 4.9s infinite alternate; }
+        .lily-10 { left: 15%; animation: lilySway 4.1s infinite alternate-reverse; }
+
+        @keyframes lilySway {
+            from { transform: rotate(-8deg) translateY(0); }
+            to { transform: rotate(8deg) translateY(-10px); }
+        }
+
+        /* Lily stem */
+        .lily-stem {
+            width: 8px;
+            height: 150px;
+            background: linear-gradient(180deg, #4c9a2a, #2d6a4f);
+            border-radius: 4px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* Lily leaves */
+        .lily-leaf {
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            background: linear-gradient(90deg, #4c9a2a, #2d6a4f);
+            border-radius: 50%;
+            transform-origin: left center;
+        }
+
+        .lily-leaf-left {
+            left: -25px;
+            top: 30px;
+            transform: rotate(-30deg);
+            animation: leafWave 3s infinite alternate;
+        }
+
+        .lily-leaf-right {
+            right: -25px;
+            top: 30px;
+            transform: rotate(30deg);
+            animation: leafWave 3s infinite alternate-reverse;
+        }
+
+        .lily-leaf-bottom {
+            left: -15px;
+            top: 60px;
+            width: 25px;
+            transform: rotate(-20deg);
+            animation: leafWave 2.5s infinite alternate;
+        }
+
+        .lily-leaf-bottom-right {
+            right: -15px;
+            top: 60px;
+            width: 25px;
+            transform: rotate(20deg);
+            animation: leafWave 2.5s infinite alternate-reverse;
+        }
+
+        @keyframes leafWave {
+            from { transform: rotate(-35deg); }
+            to { transform: rotate(-25deg); }
+        }
+
+        /* Lily flower */
+        .lily-flower {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            animation: flowerBloom 2s ease-out;
+        }
+
+        @keyframes flowerBloom {
+            0% { transform: translateX(-50%) scale(0); opacity: 0; }
+            100% { transform: translateX(-50%) scale(1); opacity: 1; }
+        }
+
+        /* Lily petals (pink) */
+        .lily-petal {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle at 30% 30%, #ffb6c1, #ff69b4);
+            border-radius: 50% 50% 50% 0;
+            transform-origin: bottom right;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            animation: petalGlow 3s infinite alternate;
+        }
+
+        @keyframes petalGlow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .lily-petal-1 {
+            top: 0;
+            left: 10px;
+            transform: rotate(45deg);
+        }
+
+        .lily-petal-2 {
+            top: 0;
+            right: 10px;
+            transform: rotate(135deg);
+        }
+
+        .lily-petal-3 {
+            bottom: 0;
+            left: 10px;
+            transform: rotate(-45deg);
+        }
+
+        .lily-petal-4 {
+            bottom: 0;
+            right: 10px;
+            transform: rotate(-135deg);
+        }
+
+        .lily-petal-5 {
+            top: 10px;
+            left: 10px;
+            width: 45px;
+            height: 45px;
+            transform: rotate(90deg);
+        }
+
+        .lily-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ffd700;
+            z-index: 2;
+            animation: centerGlow 2s infinite alternate;
+        }
+
+        @keyframes centerGlow {
+            from { box-shadow: 0 0 10px #ffd700; }
+            to { box-shadow: 0 0 30px #ffd700, 0 0 50px #ffa500; }
+        }
+
+        /* Garden Message - Indonesian with romantic animation */
+        .garden-message {
+            position: absolute;
+            bottom: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2.2rem;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index: 50;
+            animation: messageFloat 2s infinite alternate, messageGlow 3s infinite;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            white-space: nowrap;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        @keyframes messageGlow {
+            0%, 100% { border-color: rgba(255,255,255,0.3); }
+            50% { border-color: rgba(255, 105, 180, 0.6); }
+        }
+
+        @keyframes messageFloat {
+            from { transform: translateX(-50%) translateY(0); }
+            to { transform: translateX(-50%) translateY(-15px); }
+        }
+
+        /* Gallery Container - Same background as garden */
+        .gallery-container {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, #ffb6c1 0%, #ffc0cb 70%, #90be6d 100%);
+            z-index: 400;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto; /* Enable scrolling */
+            overflow-x: hidden;
+        }
+
+        .gallery-container.active {
+            display: flex;
+        }
+
+        /* Gallery Grid - 8 photos with more spacing */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            z-index: 10;
+            margin: 20px 0;
+        }
+
+        /* Photo Card - Transparent with romantic hover */
+        .photo-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            animation: cardFadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes cardFadeIn {
+            to { opacity: 1; }
+        }
+
+        .photo-card:nth-child(1) { animation-delay: 0.1s; }
+        .photo-card:nth-child(2) { animation-delay: 0.2s; }
+        .photo-card:nth-child(3) { animation-delay: 0.3s; }
+        .photo-card:nth-child(4) { animation-delay: 0.4s; }
+        .photo-card:nth-child(5) { animation-delay: 0.5s; }
+        .photo-card:nth-child(6) { animation-delay: 0.6s; }
+        .photo-card:nth-child(7) { animation-delay: 0.7s; }
+        .photo-card:nth-child(8) { animation-delay: 0.8s; }
+
+        .photo-card:hover {
+            transform: translateY(-20px) scale(1.1) rotate(2deg);
+            border-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 30px 50px rgba(255, 105, 180, 0.5);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.15);
+        }
+
+        /* Special Slides Container - For 5 photos */
+        .special-slides-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            margin: 20px auto;
+        }
+
+        .special-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .special-slide.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .special-card {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            aspect-ratio: 1 / 1;
+            animation: specialCardFloat 3s ease-in-out infinite, specialCardGlow 3s infinite;
+        }
+
+        @keyframes specialCardFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        @keyframes specialCardGlow {
+            0%, 100% { box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3); }
+            50% { box-shadow: 0 30px 60px rgba(255, 20, 147, 0.6); }
+        }
+
+        .special-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .special-slide.active .special-card img {
+            animation: zoomIn 1s ease;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Gallery Navigation with romantic animation */
+        .gallery-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 450;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+            animation: navPulse 2s infinite;
+        }
+
+        @keyframes navPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 105, 180, 0.5); }
+        }
+
+        .gallery-nav:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.15);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .gallery-nav.left {
+            left: 20px;
+        }
+
+        .gallery-nav.right {
+            right: 20px;
+        }
+
+        /* Gallery Title with romantic animation */
+        .gallery-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 20px 0;
+            z-index: 10;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            animation: titleGlow 3s infinite, titleFloat 3s infinite alternate;
+            position: sticky;
+            top: 20px;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { border-color: rgba(255,255,255,0.3); }
+            50% { border-color: rgba(255, 105, 180, 0.6); }
+        }
+
+        @keyframes titleFloat {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+
+        /* Love overlay - ALWAYS ACTIVE */
+        .photo-love-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998; /* Just below falling hearts */
+            overflow: hidden;
+        }
+
+        .photo-love-item {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            animation: floatLove 4s ease-out forwards;
+            text-shadow: 0 0 20px rgba(255,20,147,0.8);
+            filter: drop-shadow(0 0 10px rgba(255,105,180,0.5));
+        }
+
+        @keyframes floatLove {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg) scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-200px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Closing Message with romantic animation */
+        .closing-message {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #ff1493, #ff69b4, #ffb6c1);
+            background-size: 300% 300%;
+            z-index: 500;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            animation: gradientMove 5s ease infinite, messagePop 0.5s ease;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes messagePop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .closing-message h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            animation: textHeartbeat 2s infinite;
+        }
+
+        .closing-message p {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .reset-button {
+            padding: 18px 50px;
+            background: white;
+            color: #ff1493;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            font-family: 'Poppins', sans-serif;
+            animation: buttonPulse 2s infinite;
+            z-index: 501;
+        }
+
+        .reset-button:hover {
+            transform: scale(1.15) rotate(2deg);
+            box-shadow: 0 20px 50px rgba(255,255,255,0.5);
+        }
+
+        /* Credit */
+        .credit {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            z-index: 9997;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            background: rgba(255,20,147,0.2);
+            padding: 5px 15px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            animation: creditGlow 3s infinite;
+        }
+
+        @keyframes creditGlow {
+            0%, 100% { background: rgba(255,20,147,0.2); }
+            50% { background: rgba(255,105,180,0.4); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .special-slides-container {
+                height: 400px;
+                margin: 10px auto;
+            }
+
+            .garden-message {
+                font-size: 1.8rem;
+                padding: 12px 30px;
+            }
+
+            .gallery-title {
+                font-size: 2rem;
+                padding: 8px 20px;
+                position: sticky;
+                top: 10px;
+            }
+
+            .gallery-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            .gallery-nav.left {
+                left: 10px;
+            }
+
+            .gallery-nav.right {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px;
+            }
+
+            .dialog h1 {
+                font-size: 1.8em;
+            }
+
+            .dialog p {
+                font-size: 1.1em;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .envelope {
+                width: 260px;
+                height: 180px;
+            }
+
+            .flap {
+                border-left: 130px solid transparent;
+                border-right: 130px solid transparent;
+                border-top: 90px solid #ff758f;
+            }
+
+            .pocket {
+                border-left: 130px solid transparent;
+                border-right: 130px solid transparent;
+                border-bottom: 180px solid #ff4d6d;
+            }
+
+            .letter-preview {
+                width: 220px;
+                height: 150px;
+            }
+
+            .seal {
+                top: 70px;
+                left: 110px;
+            }
+
+            .closing-message h1 {
+                font-size: 2.2em;
+            }
+
+            .closing-message p {
+                font-size: 1.3em;
+            }
+
+            .garden-message {
+                font-size: 1.5rem;
+                padding: 10px 20px;
+            }
+
+            .sun {
+                width: 60px;
+                height: 60px;
+                top: 20px;
+                right: 20px;
+            }
+
+            .lily-stem {
+                height: 100px;
+            }
+
+            .special-card {
+                width: 95%;
+            }
+
+            .gallery-grid {
+                gap: 12px;
+                padding: 12px;
+                margin-bottom: 30px;
+            }
+
+            .gallery-title {
+                font-size: 1.8rem;
+                padding: 8px 20px;
+                top: 5px;
+            }
+        }
+    </style>
+</head>
+<body class="not-loaded">
+
+<!-- Background Shapes -->
+<div class="bg-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<!-- Falling container - ALWAYS ACTIVE -->
+<div class="falling-container" id="fallingContainer"></div>
+
+<!-- Love overlay - ALWAYS ACTIVE -->
+<div class="photo-love-overlay" id="photoLoveOverlay"></div>
+
+<!-- Main card -->
+<div class="card" id="mainCard">
+    <div class="dialog">
+        <h1>Happy Valentine's Day Sayang</h1>
+        <p>mau liat sesuatu gaa</p>
+    </div>
+    <div class="button-container">
+        <button class="btn btn-ya" id="btnYes">Ya</button>
+        <button class="btn btn-tidak" id="btnNo">Ga</button>
+    </div>
+</div>
+
+<!-- Envelope Stage -->
+<div id="envelope-stage">
+    <div class="envelope-container" id="envelope">
+        <div class="envelope">
+            <div class="pocket"></div>
+            <div class="letter-preview"></div>
+            <div class="flap"></div>
+            <div class="seal" id="sealBtn">❤️</div>
+        </div>
+    </div>
+</div>
+
+<!-- Full Letter View -->
+<div id="letter-view">
+    <div class="love-letter">
+        <button class="close-btn" id="closeLetterBtn">×</button>
+        <h2>Untuk Pacarku,</h2>
+        <p>Halo Sayang</p>
+        <p>Cintaku Sayangkuu</p>
+        <p>Makasih ya sayang kamu udah mau sama aku sampe sekarang</p>
+        <p>Makasih jugaa ya kamu udah mau sabar dengan sikap aku sayang</p>
+        <p>Semoga kita terus kaya gini yaaa sayang.</p>
+        <p>I Love You! ❤️</p>
+        <p style="text-align: right;">- Rizki</p>
+    </div>
+</div>
+
+<!-- Garden Container -->
+<div class="garden-container" id="gardenContainer">
+    <!-- Sun -->
+    <div class="sun"></div>
+    <div class="sun-rays"></div>
+    
+    <!-- Grass -->
+    <div class="grass"></div>
+    
+    <!-- Grass blades -->
+    <div class="grass-blade" style="left: 5%"></div>
+    <div class="grass-blade" style="left: 15%"></div>
+    <div class="grass-blade" style="left: 25%"></div>
+    <div class="grass-blade" style="left: 35%"></div>
+    <div class="grass-blade" style="left: 45%"></div>
+    <div class="grass-blade" style="left: 55%"></div>
+    <div class="grass-blade" style="left: 65%"></div>
+    <div class="grass-blade" style="left: 75%"></div>
+    <div class="grass-blade" style="left: 85%"></div>
+    <div class="grass-blade" style="left: 95%"></div>
+    
+    <!-- Lilies -->
+    <div class="lily lily-1">
+        <div class="lily-stem">
+            <div class="lily-leaf lily-leaf-left"></div>
+            <div class="lily-leaf lily-leaf-right"></div>
+            <div class="lily-leaf lily-leaf-bottom"></div>
+            <div class="lily-leaf lily-leaf-bottom-right"></div>
+            <div class="lily-flower">
+                <div class="lily-petal lily-petal-1"></div>
+                <div class="lily-petal lily-petal-2"></div>
+                <div class="lily-petal lily-petal-3"></div>
+                <div class="lily-petal lily-petal-4"></div>
+                <div class="lily-petal lily-petal-5"></div>
+                <div class="lily-center"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lily lily-2">
+        <div class="lily-stem">
+            <div class="lily-leaf lily-leaf-left"></div>
+            <div class="lily-leaf lily-leaf-right"></div>
+            <div class="lily-leaf lily-leaf-bottom"></div>
+            <div class="lily-leaf lily-leaf-bottom-right"></div>
+            <div class="lily-flower">
+                <div class="lily-petal lily-petal-1"></div>
+                <div class="lily-petal lily-petal-2"></div>
+                <div class="lily-petal lily-petal-3"></div>
+                <div class="lily-petal lily-petal-4"></div>
+                <div class="lily-petal lily-petal-5"></div>
+                <div class="lily-center"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lily lily-3">
+        <div class="lily-stem">
+            <div class="lily-leaf lily-leaf-left"></div>
+            <div class="lily-leaf lily-leaf-right"></div>
+            <div class="lily-leaf lily-leaf-bottom"></div>
+            <div class="lily-leaf lily-leaf-bottom-right"></div>
+            <div class="lily-flower">
+                <div class="lily-petal lily-petal-1"></div>
+                <div class="lily-petal lily-petal-2"></div>
+                <div class="lily-petal lily-petal-3"></div>
+                <div class="lily-petal lily-petal-4"></div>
+                <div class="lily-petal lily-petal-5"></div>
+                <div class="lily-center"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Garden Messages - Indonesian -->
+    <div class="garden-message garden-message-1">i love u sayang</div>
+</div>
+
+<!-- Gallery Container -->
+<div class="gallery-container" id="galleryContainer">
+    <div class="gallery-title">SAYANGKUU ❤️</div>
+    
+    <!-- Grid untuk 8 foto -->
+    <div class="gallery-grid" id="galleryGrid">
+        <!-- 8 photos will be added by JavaScript -->
+    </div>
+    
+    <!-- Container untuk 5 foto spesial (slide) -->
+    <div class="special-slides-container" id="specialSlidesContainer" style="display: none;">
+        <!-- Slides will be added by JavaScript -->
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="gallery-nav left" id="prevBtn">‹</div>
+    <div class="gallery-nav right" id="nextBtn">›</div>
+</div>
+
+<!-- Closing Message -->
+<div class="closing-message" id="closingMessage">
+    <h1>Beres dehhh</h1>
+    <p>Makasih ya sayang udah mau buka website ini walaupun gaje banget HAHAHA.<br>aku pasti sayang kamu selalu</p>
+    <button class="reset-button" onclick="resetAll()">Baca Lagi</button>
+</div>
+
+<div class="credit">Untuk Pacar Rizki ❤️</div>
+
+<!-- Audio - auto play without UI -->
+<audio id="bgMusic" loop autoplay>
+    <!-- Ganti src dengan file audio kamu -->
+    <source src="Valentine (Instrumental).mp3" type="audio/mp3">
+</audio>
+
+<script>
+    // Auto play audio (with fallback for browser restrictions)
+    const audio = document.getElementById('bgMusic');
+    
+    // Try to play automatically
+    audio.play().catch(e => {
+        console.log("Audio autoplay prevented. Will play after user interaction.");
+        // Play after first click anywhere
+        document.body.addEventListener('click', function playOnce() {
+            audio.play();
+            document.body.removeEventListener('click', playOnce);
+        }, { once: true });
+    });
+
+    // Data foto - 8 foto grid + 5 foto slide
+    const gridPhotos = [
+        { url: '/pacar/1.jpeg' },
+        { url: '/pacar/2.jpeg' },
+        { url: '/pacar/3.jpeg' },
+        { url: '/pacar/4.jpeg' },
+        { url: '/pacar/5.jpeg' },
+        { url: '/pacar/6.jpeg' },
+        { url: '/pacar/7.jpeg' },
+        { url: '/pacar/8.jpeg' }
+    ];
+
+    const slidePhotos = [
+        { url: '/pacar/11.jpeg' },
+        { url: '/pacar/22.jpeg' },
+        { url: '/pacar/44.jpeg' },
+        { url: '/pacar/55.jpeg' }
+    ];
+
+    // Element references
+    const btnYes = document.getElementById('btnYes');
+    const btnNo = document.getElementById('btnNo');
+    const envelopeStage = document.getElementById('envelope-stage');
+    const envelope = document.getElementById('envelope');
+    const sealBtn = document.getElementById('sealBtn');
+    const letterView = document.getElementById('letter-view');
+    const closeLetterBtn = document.getElementById('closeLetterBtn');
+    const gardenContainer = document.getElementById('gardenContainer');
+    const galleryContainer = document.getElementById('galleryContainer');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const specialSlidesContainer = document.getElementById('specialSlidesContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const photoLoveOverlay = document.getElementById('photoLoveOverlay');
+    const closingMessage = document.getElementById('closingMessage');
+    const fallingContainer = document.getElementById('fallingContainer');
+
+    let isFallingActive = true;
+    let currentSlide = 0;
+    let slideInterval;
+    let photoLoveInterval;
+    let fallingInterval;
+
+    // Flower animation initialization
+    window.onload = () => {
+        const c = setTimeout(() => {
+            document.body.classList.remove("not-loaded");
+            clearTimeout(c);
+        }, 1000);
+        startFalling(1);
+        startPhotoLove(); // Start love overlay immediately
+    };
+
+    // Falling animation - NEVER STOPS
+    function startFalling(speed = 1) {
+        if (fallingInterval) clearInterval(fallingInterval);
+        
+        function createLove() {
+            const maxItems = Math.min(150 * speed, 300);
+            
+            if (fallingContainer.children.length < maxItems) {
+                const item = document.createElement('div');
+                item.className = 'falling-item';
+                
+                const emojis = ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'];
+                item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                item.style.left = Math.random() * 98 + '%';
+                item.style.fontSize = (Math.random() * 30 + 15) + 'px';
+                item.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                item.style.animationDelay = Math.random() * 1 + 's';
+                
+                fallingContainer.appendChild(item);
+
+                setTimeout(() => {
+                    if (item.parentNode === fallingContainer) {
+                        item.remove();
+                    }
+                }, 7000);
+            }
+        }
+        
+        // Create love continuously
+        fallingInterval = setInterval(createLove, Math.random() * 150 + 100);
+        createLove(); // Create one immediately
+    }
+
+    // Photo love overlay - NEVER STOPS
+    function startPhotoLove() {
+        if (photoLoveInterval) clearInterval(photoLoveInterval);
+        
+        photoLoveInterval = setInterval(() => {
+            for (let i = 0; i < 3; i++) {
+                const love = document.createElement('div');
+                love.className = 'photo-love-item';
+                
+                const emojis = ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'];
+                love.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                
+                love.style.left = Math.random() * 100 + '%';
+                love.style.top = Math.random() * 100 + '%';
+                love.style.fontSize = (Math.random() * 30 + 15) + 'px';
+                love.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                love.style.animationDelay = Math.random() * 1 + 's';
+                
+                photoLoveOverlay.appendChild(love);
+                
+                setTimeout(() => {
+                    if (love.parentNode === photoLoveOverlay) {
+                        love.remove();
+                    }
+                }, 4000);
+            }
+        }, 200);
+    }
+
+    // Load grid photos (8 photos)
+    function loadGridPhotos() {
+        galleryGrid.innerHTML = '';
+        gridPhotos.forEach(photo => {
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            card.innerHTML = `<img src="${photo.url}" alt="foto kenangan" loading="lazy">`;
+            galleryGrid.appendChild(card);
+        });
+    }
+
+    // Load slide photos (5 photos)
+    function loadSlidePhotos() {
+        specialSlidesContainer.innerHTML = '';
+        slidePhotos.forEach((photo, index) => {
+            const slide = document.createElement('div');
+            slide.className = `special-slide ${index === 0 ? 'active' : ''}`;
+            slide.innerHTML = `
+                <div class="special-card">
+                    <img src="${photo.url}" alt="foto spesial">
+                </div>
+            `;
+            specialSlidesContainer.appendChild(slide);
+        });
+    }
+
+    // Start slideshow
+    function startSlideshow() {
+        if (slideInterval) clearInterval(slideInterval);
+        
+        slideInterval = setInterval(() => {
+            const slides = document.querySelectorAll('.special-slide');
+            if (slides.length === 0) return;
+            
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000); // 4 detik per slide
+    }
+
+    // Button Tidak handler
+    btnNo.onclick = () => {
+        btnYes.style.animation = 'yesPulse 1.2s ease';
+        setTimeout(() => btnYes.style.animation = '', 1200);
+        
+        const dialog = document.querySelector('.dialog');
+        const originalHTML = dialog.innerHTML;
+        dialog.innerHTML = '<h1>Harus liat!</h1>';
+        setTimeout(() => {
+            dialog.innerHTML = originalHTML;
+        }, 2000);
+    };
+
+    // Button Ya handler
+    btnYes.onclick = () => {
+        document.querySelector('.card').style.display = 'none';
+        envelopeStage.classList.add('visible');
+    };
+
+    // Seal handler
+    sealBtn.onclick = () => {
+        envelope.classList.add('open');
+        
+        setTimeout(() => {
+            letterView.classList.add('active');
+        }, 1500);
+    };
+
+    // Close letter view - langsung ke garden
+    closeLetterBtn.onclick = () => {
+        letterView.classList.remove('active');
+        envelopeStage.classList.remove('visible');
+        
+        // Langsung ke garden
+        gardenContainer.classList.add('active');
+        
+        // Setelah 4 detik, pindah ke gallery
+        setTimeout(() => {
+            gardenContainer.classList.remove('active');
+            galleryContainer.classList.add('active');
+            
+            // Load photos
+            loadGridPhotos();
+            loadSlidePhotos();
+            
+            // Tampilkan grid dulu
+            galleryGrid.style.display = 'grid';
+            specialSlidesContainer.style.display = 'none';
+            
+        }, 4000); // 4 detik di garden
+    };
+
+    // Navigation event listeners
+    prevBtn.addEventListener('click', () => {
+        if (galleryGrid.style.display === 'grid') {
+            // Pindah ke slides
+            galleryGrid.style.display = 'none';
+            specialSlidesContainer.style.display = 'flex';
+            currentSlide = 0;
+            const slides = document.querySelectorAll('.special-slide');
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+            });
+            startSlideshow();
+        } else {
+            // Di slides, pindah manual
+            const slides = document.querySelectorAll('.special-slide');
+            if (slides.length === 0) return;
+            
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            // Reset interval
+            if (slideInterval) {
+                clearInterval(slideInterval);
+                startSlideshow();
+            }
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (galleryGrid.style.display === 'grid') {
+            // Pindah ke slides
+            galleryGrid.style.display = 'none';
+            specialSlidesContainer.style.display = 'flex';
+            currentSlide = 0;
+            const slides = document.querySelectorAll('.special-slide');
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+            });
+            startSlideshow();
+        } else {
+            // Di slides, pindah manual atau ke closing message
+            const slides = document.querySelectorAll('.special-slide');
+            if (slides.length === 0) return;
+            
+            if (currentSlide === slides.length - 1) {
+                // Ini slide terakhir, pindah ke closing message
+                goToClosingMessage();
+            } else {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+                
+                // Reset interval
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                    startSlideshow();
+                }
+            }
+        }
+    });
+
+    // Go to closing message
+    function goToClosingMessage() {
+        galleryContainer.classList.remove('active');
+        closingMessage.style.display = 'flex';
+        
+        if (slideInterval) {
+            clearInterval(slideInterval);
+        }
+    }
+
+    // Reset all function
+    window.resetAll = function() {
+        closingMessage.style.display = 'none';
+        envelopeStage.classList.remove('visible');
+        letterView.classList.remove('active');
+        gardenContainer.classList.remove('active');
+        galleryContainer.classList.remove('active');
+        document.querySelector('.card').style.display = 'block';
+        
+        if (slideInterval) {
+            clearInterval(slideInterval);
+        }
+        
+        currentSlide = 0;
+        
+        // Reset UI
+        envelope.classList.remove('open');
+        galleryGrid.style.display = 'grid';
+        specialSlidesContainer.style.display = 'none';
+    };
+</script>
+</body>
+</html>
